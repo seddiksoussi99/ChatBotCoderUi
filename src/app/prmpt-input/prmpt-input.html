@@ -1,0 +1,20 @@
+<div class="card-footer text-muted d-flex justify-content-start align-items-center p-3">
+    <i class="bi bi-robot" style="padding-right: .5rem;"></i>
+    <input 
+        type="text" 
+        class="form-control form-control-lg" 
+        id="promptInput" 
+        #promptInput
+        placeholder="Type message"
+        (keyup.enter)="sendMessage(promptInput)"
+        [(ngModel)]="inputValue"
+        [disabled]="isLoading">
+
+    <button 
+        class="btn btn-primary ms-1" 
+        (click)="sendMessage(promptInput)"
+        [disabled]="inputValue.trim() === '' || isLoading">
+        <i class="bi bi-send"></i>
+    </button>
+    
+</div>

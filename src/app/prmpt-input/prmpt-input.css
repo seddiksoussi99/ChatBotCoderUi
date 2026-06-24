@@ -1,0 +1,12 @@
+#chat2 .form-control:focus {
+border-color: transparent;
+box-shadow: inset 0px 0px 0px 1px transparent;
+}
+
+i.bi-robot {
+  font-size: 1.5rem;
+}
+
+button {
+  transition: all 0.3s ease-in-out;
+}

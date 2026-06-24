@@ -1,0 +1,42 @@
+<div id="conversation" class="card-body" data-mdb-perfect-scrollbar-init style="position: relative; height: 70vh; overflow: scroll;">
+
+    <div style="text-align: center;">
+        <i class="bi bi-robot" style="font-size: 5rem;"></i>
+        <p class="text-muted small mb-4 pb-2">You are now connected on Coding Chat</p>
+    </div>
+
+    <div class="d-flex flex-row justify-content-start mb-4">
+        
+        <i class="bi bi-robot"></i>
+        <div>
+        <p class="small p-2 ms-3 mb-1 rounded-3 bg-body-tertiary">Hi</p>
+        <p class="small p-2 ms-3 mb-1 rounded-3 bg-body-tertiary">How can i help you on coding ...
+        </p>
+        </div>
+    </div>
+
+    @for (mssg of messages; track $index) {
+        @if ($index % 2 === 0) {
+            <div class="mssg d-flex flex-row justify-content-end mb-4 pt-1">
+                <div>
+                <p class="small p-2 me-3 mb-1 text-white rounded-3 bg-primary">{{ mssg }}</p>
+                </div>
+                <img src="img/unknow-avatar.avif"
+                alt="avatar 1" style="width: 30px; height: 100%; border-radius: 50%;">
+            </div>
+        } @else {
+            <div class="mssg d-flex flex-row justify-content-start mb-4">
+                <i class="bi bi-robot"></i>
+                <div>
+                <p class="small p-2 ms-3 mb-1 rounded-3 bg-body-tertiary">{{ mssg }}</p>
+                </div>
+            </div>
+        }
+    }
+    <div *ngIf="loading$ | async" id="loadingSpinner" style="width: 100%; text-align: center;">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+</div>

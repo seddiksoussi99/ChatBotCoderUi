@@ -1,0 +1,6 @@
+<div class="card-header d-flex justify-content-between align-items-center p-3">
+    <h5 class="mb-0">Coding Chat</h5>
+    <button (click)="toggleTheme()" type="button" class="btn btn-link btn-sm px-3">
+        <i class="bi" [ngClass]="{'bi-moon-fill': isDarkTheme, 'bi-sun-fill': !isDarkTheme}"></i>
+    </button>
+</div>
